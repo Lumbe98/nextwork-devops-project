@@ -1,0 +1,10 @@
+version: 0.0
+os: linux
+files:
+  - source: /nextwork-devops-project-1.0-SNAPSHOT.war
+    destination: /opt/tomcat/webapps/
+hooks:
+  BeforeInstall:
+    - location: scripts/clean_webapps.sh
+      timeout: 300
+      runas: root
